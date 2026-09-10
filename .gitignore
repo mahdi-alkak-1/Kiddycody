@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.vercel/
+.amplify/
+.npm/
+.sites-runtime/
+*.tsbuildinfo
+*.log
+.DS_Store
+Thumbs.db

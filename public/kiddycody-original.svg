@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650">
+  <defs>
+    <!-- ========== FILTERS ========== -->
+    <filter id="drop-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+
+    <!-- ========== CUBE DEFINITIONS ========== -->
+    <!-- Each cube: 70px wide (±35), 80px tall (±40) -->
+    <!-- Faces: left=darkest, right=base, top=lightest -->
+    <!-- Top face has 4-slope bevel + recessed center indent -->
+    <!-- Inner indent diamond: (0,-31) (-19,-20) (0,-9) (19,-20) -->
+
+    <!-- TEAL CUBE (#1ABC9C) -->
+    <g id="cube-teal">
+      <polygon points="0,0 -35,-20 -35,20 0,40" fill="#15967D"/>
+      <polygon points="0,0 35,-20 35,20 0,40" fill="#1ABC9C"/>
+      <polygon points="0,0 -35,-20 0,-40 35,-20" fill="#48D1B6"/>
+      <!-- Bevel slopes -->
+      <polygon points="0,-40 35,-20 19,-20 0,-31" fill="#5AD8BE"/>
+      <polygon points="35,-20 0,0 0,-9 19,-20" fill="#30C4A5"/>
+      <polygon points="0,0 -35,-20 -19,-20 0,-9" fill="#22B898"/>
+      <polygon points="-35,-20 0,-40 0,-31 -19,-20" fill="#48D1B6"/>
+      <!-- Indent -->
+      <polygon points="0,-31 -19,-20 0,-9 19,-20" fill="#138C73"/>
+      <!-- Edge highlights -->
+      <line x1="-35" y1="-20" x2="0" y2="0" stroke="white" stroke-width="1.2" opacity="0.18"/>
+      <line x1="35" y1="-20" x2="0" y2="0" stroke="white" stroke-width="1.2" opacity="0.18"/>
+      <line x1="0" y1="0" x2="0" y2="40" stroke="white" stroke-width="1" opacity="0.12"/>
+    </g>
+
+    <!-- GOLDEN-YELLOW CUBE (#F2C94C) -->
+    <g id="cube-yellow">
+      <polygon points="0,0 -35,-20 -35,20 0,40" fill="#C2A13D"/>
+      <polygon points="0,0 35,-20 35,20 0,40" fill="#F2C94C"/>
+      <polygon points="0,0 -35,-20 0,-40 35,-20" fill="#F6D97D"/>
+      <!-- Bevel slopes -->
+      <polygon points="0,-40 35,-20 19,-20 0,-31" fill="#F8DF8F"/>
+      <polygon points="35,-20 0,0 0,-9 19,-20" fill="#F0C545"/>
+      <polygon points="0,0 -35,-20 -19,-20 0,-9" fill="#E8BB3C"/>
+      <polygon points="-35,-20 0,-40 0,-31 -19,-20" fill="#F6D97D"/>
+      <!-- Indent -->
+      <polygon points="0,-31 -19,-20 0,-9 19,-20" fill="#B89838"/>
+      <!-- Edge highlights -->
+      <line x1="-35" y1="-20" x2="0" y2="0" stroke="white" stroke-width="1.2" opacity="0.22"/>
+      <line x1="35" y1="-20" x2="0" y2="0" stroke="white" stroke-width="1.2" opacity="0.22"/>
+      <line x1="0" y1="0" x2="0" y2="40" stroke="white" stroke-width="1" opacity="0.15"/>
+    </g>
+
+    <!-- RED-ORANGE CUBE (#F15C4C) -->
+    <g id="cube-red">
+      <polygon points="0,0 -35,-20 -35,20 0,40" fill="#C04A3D"/>
+      <polygon points="0,0 35,-20 35,20 0,40" fill="#F15C4C"/>
+      <polygon points="0,0 -35,-20 0,-40 35,-20" fill="#F68C80"/>
+      <!-- Bevel slopes -->
+      <polygon points="0,-40 35,-20 19,-20 0,-31" fill="#F89C92"/>
+      <polygon points="35,-20 0,0 0,-9 19,-20" fill="#F26858"/>
+      <polygon points="0,0 -35,-20 -19,-20 0,-9" fill="#E85646"/>
+      <polygon points="-35,-20 0,-40 0,-31 -19,-20" fill="#F68C80"/>
+      <!-- Indent -->
+      <polygon points="0,-31 -19,-20 0,-9 19,-20" fill="#B04038"/>
+      <!-- Edge highlights -->
+      <line x1="-35" y1="-20" x2="0" y2="0" stroke="white" stroke-width="1.2" opacity="0.18"/>
+      <line x1="35" y1="-20" x2="0" y2="0" stroke="white" stroke-width="1.2" opacity="0.18"/>
+      <line x1="0" y1="0" x2="0" y2="40" stroke="white" stroke-width="1" opacity="0.12"/>
+    </g>
+
+    <!-- BRIGHT BLUE CUBE (#3498DB) -->
+    <g id="cube-bblue">
+      <polygon points="0,0 -35,-20 -35,20 0,40" fill="#2A79AF"/>
+      <polygon points="0,0 35,-20 35,20 0,40" fill="#3498DB"/>
+      <polygon points="0,0 -35,-20 0,-40 35,-20" fill="#65B2E5"/>
+      <!-- Bevel slopes -->
+      <polygon points="0,-40 35,-20 19,-20 0,-31" fill="#72BAE8"/>
+      <polygon points="35,-20 0,0 0,-9 19,-20" fill="#4BA3DE"/>
+      <polygon points="0,0 -35,-20 -19,-20 0,-9" fill="#3D98D8"/>
+      <polygon points="-35,-20 0,-40 0,-31 -19,-20" fill="#65B2E5"/>
+      <!-- Indent -->
+      <polygon points="0,-31 -19,-20 0,-9 19,-20" fill="#236FA0"/>
+      <!-- Edge highlights -->
+      <line x1="-35" y1="-20" x2="0" y2="0" stroke="white" stroke-width="1.2" opacity="0.18"/>
+      <line x1="35" y1="-20" x2="0" y2="0" stroke="white" stroke-width="1.2" opacity="0.18"/>
+      <line x1="0" y1="0" x2="0" y2="40" stroke="white" stroke-width="1" opacity="0.12"/>
+    </g>
+
+    <!-- DARK BLUE CUBE (#2980B9) -->
+    <g id="cube-dblue">
+      <polygon points="0,0 -35,-20 -35,20 0,40" fill="#216694"/>
+      <polygon points="0,0 35,-20 35,20 0,40" fill="#2980B9"/>
+      <polygon points="0,0 -35,-20 0,-40 35,-20" fill="#549DCE"/>
+      <!-- Bevel slopes -->
+      <polygon points="0,-40 35,-20 19,-20 0,-31" fill="#62A5D2"/>
+      <polygon points="35,-20 0,0 0,-9 19,-20" fill="#3B8DC2"/>
+      <polygon points="0,0 -35,-20 -19,-20 0,-9" fill="#3085BC"/>
+      <polygon points="-35,-20 0,-40 0,-31 -19,-20" fill="#549DCE"/>
+      <!-- Indent -->
+      <polygon points="0,-31 -19,-20 0,-9 19,-20" fill="#1C5C88"/>
+      <!-- Edge highlights -->
+      <line x1="-35" y1="-20" x2="0" y2="0" stroke="white" stroke-width="1.2" opacity="0.15"/>
+      <line x1="35" y1="-20" x2="0" y2="0" stroke="white" stroke-width="1.2" opacity="0.15"/>
+      <line x1="0" y1="0" x2="0" y2="40" stroke="white" stroke-width="1" opacity="0.10"/>
+    </g>
+  </defs>
+
+  <!-- ========== K LETTER ASSEMBLY ========== -->
+  <!-- Layout: 9 cubes forming a K on isometric grid -->
+  <!-- Stem: 5 cubes (teal, yellow, dblue x3) -->
+  <!-- Upper arm: yellow connector + red tip -->
+  <!-- Lower arm: bright blue connector + red tip -->
+  <!-- Rendering order: top-to-bottom (back-to-front in isometric) -->
+
+  <g transform="translate(195, 310) scale(2)" filter="url(#drop-shadow)">
+    <!-- Stem top - Teal -->
+    <!-- <use href="#cube-red" x="0" y="-80"/> -->
+
+    <use href="#cube-yellow" x="174" y="-60"/>
+
+    <!-- Upper arm tip - Red (furthest out) -->
+    <use href="#cube-yellow" x="105" y="-60"/>
+    
+    
+    <!-- Upper arm middle - Yellow -->
+    <use href="#cube-yellow" x="70" y="-40"/>
+    <!-- Stem #2 - Yellow -->
+    <use href="#cube-red" x="0" y="-40"/>
+    <!-- Upper arm connector - Yellow -->
+    <use href="#cube-yellow" x="35" y="-20"/>
+
+    <!-- Stem junction - Dark Blue -->
+    <use href="#cube-red" x="0" y="0"/>
+
+    <!-- Lower arm connector - Bright Blue -->
+    <use href="#cube-bblue" x="35" y="20"/>
+    <!-- Lower arm middle - Bright Blue -->
+    <use href="#cube-bblue" x="70" y="40"/>
+    
+
+
+    <use href="#cube-bblue" x="105" y="60"/>
+
+    
+    <use href="#cube-bblue" x="174" y="60"/>
+
+    <!-- Stem #4 - Dark Blue -->
+    <use href="#cube-red" x="0" y="40"/>
+
+    <!-- Stem bottom - Dark Blue -->
+    <!-- <use href="#cube-red" x="0" y="80"/> -->
+  </g>
+
+  <!-- ========== WORDMARK ========== -->
+  <text x="580" y="330" text-anchor="middle"
+        font-family="'Nunito', 'Varela Round', 'Quicksand', 'Segoe UI', system-ui, sans-serif"
+        font-size="52" font-weight="800" letter-spacing="1">
+    <!-- <tspan fill="#2980B9">k</tspan> -->
+    <tspan fill="#3498DB">i</tspan>
+    <tspan fill="#F2C94C">d</tspan>
+    <tspan fill="#F2C94C">d</tspan>
+    <tspan fill="#F2C94C">y</tspan>
+    <tspan fill="#F15C4C">c</tspan>
+    <tspan fill="#F15C4C">o</tspan>
+    <tspan fill="#2980B9">d</tspan>
+    <tspan fill="#2980B9">y</tspan>
+  </text>
+
+</svg>
