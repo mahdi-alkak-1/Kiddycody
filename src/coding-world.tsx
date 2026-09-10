@@ -132,5 +132,5 @@ export default function CodingWorld({ paused, burst, reducedMotion }: { paused: 
     return () => { cancelled = true; dispose(); };
   }, []);
 
-  return <div className={`coding-world ${ready ? "world-ready" : ""}`} ref={host} role="img" aria-label="An interactive 3D K built from KiddyCody’s colorful blocks. Move your pointer to turn it, or use Remix to rearrange it."><img className="world-fallback" src="/kiddycody-mark.svg" alt="" width="507" height="417"/></div>;
+  return <div className={`coding-world ${ready ? "world-ready" : ""}`} ref={host} role="img" aria-label="An interactive 3D K built from KiddyCody’s colorful blocks. Move your pointer to turn it, or use Remix to rearrange it."><img className="world-fallback" src={`${import.meta.env.BASE_URL}kiddycody-mark.svg`} alt="" width="507" height="417"/></div>;
 }
