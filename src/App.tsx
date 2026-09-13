@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowDown, ArrowRight, ArrowUpRight, Check, Code2, Copy, Flag, Heart, MessageCircle, Lightbulb, Menu, Monitor, MousePointer2, Pause, Play, Puzzle, RotateCcw, Sparkles, Terminal, Users, X } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Check, Code2, Copy, Flag, Heart, MessageCircle, Lightbulb, Menu, Monitor, MousePointer2, Pause, Phone, Play, Puzzle, RotateCcw, Sparkles, Terminal, Users, X } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
@@ -63,11 +63,22 @@ export default function Home() {
   return (
     <div className={paused ? "site motion-paused" : "site"}>
       <a className="skip-link" href="#main">Skip to content</a>
-      <header className="site-header">
+      <header className="site-masthead">
+        <div className="header-contact-strip">
+          <div className="header-contact-inner">
+            <span className="header-contact-prompt">Questions about the right class? We’re happy to help.</span>
+            <div className="header-contact-actions">
+              <a className="header-phone" href="tel:+96181954659" aria-label="Call KiddyCody at plus 961 81 954 659"><Phone size={14} aria-hidden="true" /><span>Call us</span><strong>+961 81 954 659</strong></a>
+              <a className="header-group-link" href={whatsappGroup} target="_blank" rel="noopener noreferrer"><Users size={15} aria-hidden="true" /><span>Join our WhatsApp group</span><ArrowUpRight size={14} aria-hidden="true" /></a>
+            </div>
+          </div>
+        </div>
+        <div className="site-header">
         <a href="#" className="brand" aria-label="KiddyCody home"><img src={`${import.meta.env.BASE_URL}kiddycody-mark.svg`} width="48" height="43" alt="" /><span>Kiddy<span>Cody</span><small>BIG IDEAS START SMALL</small></span></a>
         <nav id="main-navigation" className={`main-nav ${menu ? "nav-open" : ""}`} aria-label="Main navigation"><a onClick={() => setMenu(false)} href="#our-way">Our approach</a><a onClick={() => setMenu(false)} href="#courses">Our courses</a><a onClick={() => setMenu(false)} href="#questions">For parents</a></nav>
         <a className="button header-cta" href="#courses">Let’s get coding <ArrowUpRight size={17} /></a>
         <button className="menu-toggle" onClick={() => setMenu(!menu)} aria-label={menu ? "Close navigation" : "Open navigation"} aria-expanded={menu} aria-controls="main-navigation">{menu ? <X /> : <Menu />}</button>
+        </div>
       </header>
       <main id="main">
         <section className="hero section-container">
