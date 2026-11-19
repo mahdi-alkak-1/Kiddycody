@@ -2,6 +2,23 @@
 @import "tw-animate-css";
 @import "../vendor/shadcn-tailwind-4.13.0.css";
 
+.academy-video-feature {
+  display: grid;
+  gap: 22px;
+  margin-block: 34px 54px;
+  padding: clamp(22px, 4vw, 48px);
+  border: 1px solid #d8e4d8;
+  border-radius: 18px;
+  background: #eef4e9;
+}
+.academy-video-feature .eyebrow { display: flex; align-items: center; gap: 9px; }
+.academy-video-feature h2 { margin-block: 10px; font-size: clamp(28px, 4vw, 46px); }
+.academy-video-feature p { max-width: 52ch; }
+.academy-video-feature .button { justify-self: start; align-self: center; }
+@media (min-width: 760px) {
+  .academy-video-feature { grid-template-columns: 1fr auto; align-items: center; }
+}
+
 @utility scrollbar-thin {
   scrollbar-width: thin;
 }
