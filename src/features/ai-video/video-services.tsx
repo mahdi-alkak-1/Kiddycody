@@ -1,6 +1,7 @@
 import { ArrowDown, ArrowLeft, ArrowUpRight, Clapperboard, Film, Mail, MessageCircle, PenLine } from "lucide-react";
 import { productionSteps, videoEmailUrl, videoInquiryUrl } from "./content";
 import FilmHero from "./film-hero";
+import VideoFeedback from "./video-feedback";
 import VideoPortfolio from "./video-portfolio";
 
 const stepIcons = { planning: PenLine, production: Clapperboard, editing: Film };
@@ -35,6 +36,7 @@ export default function VideoServices() {
           <FilmHero />
         </section>
         <VideoPortfolio />
+        <VideoFeedback />
         <section className="studio-process studio-shell" id="process">
           <p className="studio-kicker">Our production process</p>
           <h2>From idea to final cut.</h2>
