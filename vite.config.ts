@@ -7,5 +7,13 @@ export default defineConfig({
   resolve: {
     alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },
   },
-  build: { outDir: "dist" },
+  build: {
+    outDir: "dist",
+    rolldownOptions: {
+      input: {
+        academy: fileURLToPath(new URL("./index.html", import.meta.url)),
+        aiVideo: fileURLToPath(new URL("./ai-video/index.html", import.meta.url)),
+      },
+    },
+  },
 });
