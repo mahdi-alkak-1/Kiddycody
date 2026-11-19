@@ -9,7 +9,6 @@ export default function FilmHero() {
     const host = stage.current;
     if (!host) return;
     const motion = matchMedia("(prefers-reduced-motion: reduce)");
-    const pointer = matchMedia("(any-pointer: fine)");
     let revision = 0;
     let dispose: (() => void) | undefined;
 
@@ -19,7 +18,7 @@ export default function FilmHero() {
       dispose?.();
       dispose = undefined;
       setReady(false);
-      if (motion.matches || !pointer.matches) return;
+      if (motion.matches) return;
 
       void import("./film-scene").then(async ({ createFilmScene }) => {
         if (current !== revision) return;
@@ -37,12 +36,10 @@ export default function FilmHero() {
 
     update();
     motion.addEventListener("change", update);
-    pointer.addEventListener("change", update);
     return () => {
       revision++;
       dispose?.();
       motion.removeEventListener("change", update);
-      pointer.removeEventListener("change", update);
     };
   }, []);
 

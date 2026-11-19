@@ -55,7 +55,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .studio-film-frame::before { top: 5%; }
 .studio-film-frame::after { bottom: 5%; }
 .studio-film-frame img, .studio-poster img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
-.studio-film-canvas { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+.studio-film-canvas { position: absolute; inset: 0; opacity: 0; pointer-events: none; touch-action: pan-y pinch-zoom; }
 .studio-film-canvas canvas { display: block; }
 .studio-film-ready .studio-film-fallback { visibility: hidden; }
 .studio-film-ready .studio-film-canvas { opacity: 1; pointer-events: auto; }

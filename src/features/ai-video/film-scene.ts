@@ -26,7 +26,6 @@ export async function createFilmScene(
     throw error;
   }
 
-  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.65));
   const scene = new Scene();
   const camera = new PerspectiveCamera(37, 1, 0.1, 40);
   const strip = new Group();
@@ -63,6 +62,7 @@ export async function createFilmScene(
   let targetY = -0.24;
   let frame = 0;
   let lost = false;
+  let drag: { id: number; startX: number } | undefined;
   const render = () => { if (!lost) renderer.render(scene, camera); };
 
   function animate() {
@@ -83,13 +83,39 @@ export async function createFilmScene(
   }
 
   function move(event: PointerEvent) {
-    if (event.pointerType === "touch") return;
     const bounds = host.getBoundingClientRect();
+    if (event.pointerType === "touch") {
+      if (!drag || drag.id !== event.pointerId) return;
+      const offset = Math.max(-1, Math.min(1, (event.clientX - drag.startX) / (bounds.width * 0.5)));
+      turn(-0.09, -0.24 + offset * 0.95);
+      return;
+    }
     turn(-0.09 + ((event.clientY - bounds.top) / bounds.height - 0.5) * 0.52,
       -0.24 + ((event.clientX - bounds.left) / bounds.width - 0.5) * 0.9);
   }
 
-  const reset = () => turn(-0.09, -0.24);
+  function startDrag(event: PointerEvent) {
+    if (event.pointerType !== "touch" || !event.isPrimary) return;
+    drag = { id: event.pointerId, startX: event.clientX };
+    host.setPointerCapture(event.pointerId);
+  }
+
+  function endDrag(event: PointerEvent) {
+    if (drag?.id !== event.pointerId) return;
+    drag = undefined;
+    turn(-0.09, -0.24);
+  }
+
+  function leave() {
+    if (!drag) turn(-0.09, -0.24);
+  }
+
+  const pointerHandlers = {
+    pointerdown: startDrag,
+    pointermove: move,
+    pointerleave: leave,
+    lostpointercapture: endDrag,
+  } satisfies Partial<Record<keyof HTMLElementEventMap, (event: PointerEvent) => void>>;
   const contextLost = (event: Event) => {
     event.preventDefault();
     lost = true;
@@ -102,6 +128,7 @@ export async function createFilmScene(
     camera.aspect = width / height;
     camera.position.z = Math.max(7.6, 10.3 / camera.aspect);
     camera.updateProjectionMatrix();
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, width < 480 ? 1.4 : 1.65));
     renderer.setSize(width, height);
     render();
   }
@@ -110,8 +137,7 @@ export async function createFilmScene(
   function dispose() {
     cancelAnimationFrame(frame);
     observer.disconnect();
-    host.removeEventListener("pointermove", move);
-    host.removeEventListener("pointerleave", reset);
+    for (const [type, handler] of Object.entries(pointerHandlers)) host.removeEventListener(type, handler as EventListener);
     renderer.domElement.removeEventListener("webglcontextlost", contextLost);
     [frameGeometry, imageGeometry, notchGeometry, frameMaterial, notchMaterial, ...imageMaterials].forEach((resource) => resource.dispose());
     disposeTextures();
@@ -122,8 +148,7 @@ export async function createFilmScene(
   try {
     host.append(renderer.domElement);
     observer.observe(host);
-    host.addEventListener("pointermove", move);
-    host.addEventListener("pointerleave", reset);
+    for (const [type, handler] of Object.entries(pointerHandlers)) host.addEventListener(type, handler as EventListener);
     renderer.domElement.addEventListener("webglcontextlost", contextLost);
     resize();
     frame = requestAnimationFrame(animate);
