@@ -27,6 +27,27 @@ export const videoSamples: readonly VideoSample[] = [
   },
 ];
 
+export const videoFeedback = [
+  {
+    id: "arabic-video",
+    project: "Arabic video",
+    paragraphs: [
+      "عنجد الفيديو طالع احترافي وبجنّن 😍",
+      "كتير حبيت التفاصيل، اختيار المشاهد، ترتيبها، والصياغة؛ كل شي راكب مع بعضه بطريقة كتير مرتبة وواضحة.",
+      "وأكتر شغلة كنت شايلة همو هي الصوت العربي، لأن الـAI أوقات بيغلط بالنطق، بس بصراحة طلع واضح وطبيعي أكتر بكتير ما توقعت 👏🏻",
+      "النتيجة كلها طالعة راقية ومتعوب عليها، يعطيكم ألف عافية 😍",
+    ],
+  },
+  {
+    id: "english-song",
+    project: "English song video",
+    paragraphs: [
+      "شو ممكن قلك عن الأغنية بالإنكليزي ما شاءالله على الاحترافية يعني الكلمات بتجنّن، واللحن رايق ومناسب إلها بشكل كتير حلو، وكل شي راكب مع بعضه بسلاسة. وحتى الصورة والصوت طالعين بهالوضوح والنقاوة لدرجة بتحسّي إنو الأغنية مسجّلة باستوديو، مش معمولة بالذكاء الاصطناعي.",
+      "عنجد النتيجة أكتر من رائعة، شكرا كتير الكم 👏🏻✨",
+    ],
+  },
+] as const;
+
 export const productionSteps = [
   { id: "planning", title: "Plan the story", description: "We work from your idea, occasion, or existing script. If you need a script, we write one for your audience and format." },
   { id: "production", title: "Create the visuals and sound", description: "We generate the scenes, create voiceovers in the language you request, and make custom music or a song when the project calls for it." },

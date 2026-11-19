@@ -1,0 +1,56 @@
+.studio-feedback {
+  padding-block: clamp(44px, 7vw, 80px);
+  border-bottom: 1px solid var(--studio-line);
+  background: radial-gradient(ellipse at 10% 0%, #5d443b42, transparent 63%), var(--studio-bg);
+}
+
+.studio-feedback-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.studio-feedback-card {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  padding: clamp(18px, 3vw, 32px);
+  border: 1px solid var(--studio-line);
+  border-top-color: #ffd37f75;
+  border-radius: 15px;
+  background: var(--studio-panel);
+}
+
+.studio-feedback-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding-inline-end: 44px;
+  color: var(--studio-gold);
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.studio-feedback-quote-icon {
+  position: absolute;
+  inset-block-start: clamp(18px, 3vw, 32px);
+  inset-inline-end: clamp(18px, 3vw, 32px);
+  color: #ffd37f60;
+}
+
+.studio-feedback-card blockquote {
+  margin: 14px 0 0;
+  color: var(--studio-text);
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: clamp(1.0625rem, 1.7vw, 1.25rem);
+  line-height: 1.85;
+  text-align: start;
+}
+
+.studio-feedback-card blockquote p { margin: 0; }
+.studio-feedback-card blockquote p + p { margin-block-start: .65em; }
+
+@media (min-width: 720px) {
+  .studio-feedback-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+}
