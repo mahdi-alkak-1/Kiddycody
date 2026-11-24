@@ -82,6 +82,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .studio-dialog-header h2 { font-size: clamp(1.15rem, 4vw, 1.65rem); }
 .studio-dialog-header button { flex: none; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid var(--studio-line); border-radius: 7px; background: var(--studio-bg); color: var(--studio-text); cursor: pointer; }
 .studio-player { display: block; width: 100%; min-height: 200px; aspect-ratio: 16 / 9; border: 0; background: #0a1016; border-radius: 7px; }
+.studio-player[data-orientation="portrait"] { width: min(100%, 420px, max(200px, calc((100dvh - 150px) * .5625))); min-height: 0; aspect-ratio: 9 / 16; margin-inline: auto; }
 
 .studio-process { padding-block: 56px 30px; }
 .studio-steps { display: grid; gap: 12px; padding: 0; margin: 25px 0 0; list-style: none; }

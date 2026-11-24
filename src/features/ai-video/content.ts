@@ -8,9 +8,26 @@ export type VideoSample = {
   category: string;
   description: string;
   image: string;
+  orientation?: "portrait";
 };
 
 export const videoSamples: readonly VideoSample[] = [
+  {
+    id: "zUabvP701UY",
+    title: "The Bruvs | GTA-Style Restaurant Raid 🍔 — Mission Passed!",
+    category: "Restaurant Short",
+    description: "A GTA-style restaurant raid short featuring The Bruvs.",
+    image: `${aiVideoPath}the-bruvs.jpg`,
+    orientation: "portrait",
+  },
+  {
+    id: "VIUBUZMQ3m8",
+    title: "Fries Lab — GTA-Inspired AI Commercial",
+    category: "Commercial Advertisement",
+    description: "A GTA-inspired cinematic restaurant advertisement combining creative storytelling, AI filmmaking, game-style visual effects, professional editing, and immersive sound design.",
+    image: `${aiVideoPath}fries-lab.jpg`,
+    orientation: "portrait",
+  },
   {
     id: "GweDgvvN3UA",
     title: "Independence Story",
