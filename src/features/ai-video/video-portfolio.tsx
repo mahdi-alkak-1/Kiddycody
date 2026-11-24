@@ -23,6 +23,7 @@ function VideoCard({ sample }: { sample: VideoSample }) {
             </div>
             <iframe
               className="studio-player"
+              data-orientation={sample.orientation}
               src={`https://www.youtube-nocookie.com/embed/${sample.id}?autoplay=1&rel=0`}
               title={sample.title}
               referrerPolicy="strict-origin-when-cross-origin"
